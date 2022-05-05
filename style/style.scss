@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto&display=swap');
+@mixin border-design($width, $radius){
+  border: $width solid #BDBDBD;
+  border-radius: $radius;
+}
+@mixin put-icon($image){
+  content: '';
+  display: inline-block;
+  background-image: url($image);
+  background-size: cover;
+  vertical-align:text-bottom; //정렬이 잘 안된다..
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Noto Sans KR', sans-serif;
+  height:100%;
+}
+
+.wrap-movie-top{
+  min-height: 100%;
+  padding-bottom: 213px;
+}
+
+.footer{
+  height: 213px;
+  position : relative;
+  transform : translateY(-100%);
+}
+
+.movie-list{
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  width: 1060px;
+  background-color: #F2F2F2;
+  margin: 86px auto 135px;
+  text-align: center;
+  padding: 39px 26px 29px;
+  @include border-design(2px, 15px);
+}
+
+.tit-list{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  &::after{
+    display: block;
+    content: '';
+    width: 650px;
+    height: 2px;
+    background-color: #BDBDBD;
+    margin: 37px auto 28px;
+  }
+}
+
+.btn-list{
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  button{
+    color: #828282;
+    font-weight: 500;
+  }
+  button.on{
+    color:black;
+    font-weight: 900;
+  }
+}
+
+.wrap-movie-list{
+  display: grid;
+  gap:23px;
+  padding: 24px 25px 28px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 28px;
+  background-color: #FFFFFF;
+  @include border-design(2px, 15px);
+}
+
+.item-moive{
+  width: 220px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  @include border-design(1px, 10px);
+  img{
+    width:180px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+    @include border-design(1px, 5px);
+  }
+  .tit-movie-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px auto 12px;
+    font-weight: 900;
+    line-height: 23px;
+    text-align: start;
+  }
+  .wrap-top{
+    padding: 20px 19px 13px;
+  }
+}
+
+.txt-spec{
+  font-size: 13px;
+  div{
+    display: flex;
+    justify-content: space-between;
+    dl:nth-child(2) dd{
+      &::before{
+        @include put-icon('../images/star.png');
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+      }
+    }
+  }
+  dl{
+    display: flex;
+    margin-bottom: 5px;
+    line-height: 18px;
+  }
+  dt{
+    color: #828282;
+    margin-right:5px;
+  }
+}
+
+.link-like{
+  border-top:#BDBDBD solid 1px;
+  background-color: #F2F2F2;
+  display: flex;
+  border-radius: 0 0 10px 10px;
+  button{
+    padding: 9px 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  button:nth-child(1){
+    border-right:#BDBDBD solid 1px;
+  }
+  button:nth-child(2){
+    &::before{
+      @include put-icon('../images/아이콘_재생.png');
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+footer{
+  background-color: #F2F2F2;
+  h2{
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+  }
+  dl{
+    display: flex;
+    color: #4F4F4F;
+  }
+  dt{
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  dd{
+    font-weight: 400;
+    margin-right: 11px;
+  }
+  dl:nth-child(1) dd{
+    font-weight: 700;
+  }
+  dl:nth-child(n+2){
+    &::before{
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background-color: #4F4F4F;
+      margin-right: 8px;
+    }
+  }
+}
+
+.cont-footer{
+  margin: 0 auto;
+  padding: 36px 0 38px;
+  max-width: 1189px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .spec-company{
+    padding-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    div{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    strong{
+      color:#4F4F4F;
+      font-weight: 700;
+    }
+  }
+  .wrap-footer-top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 42px;
+    border-bottom: #C4C4C4 1px solid;
+    a{
+      margin: 0 12px;
+    }
+    img{
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+}
