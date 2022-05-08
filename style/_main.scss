@@ -1,0 +1,131 @@
+.wrap-movie-article{
+  min-height: 100%;
+  padding-bottom: 213px;
+}
+
+.movie-list{
+  max-width: 1060px;
+  margin: 86px auto 135px;
+  padding: 39px 26px 29px;
+  background-color: #F2F2F2;
+  text-align: center;
+  @include border-design(2px, 15px);
+}
+
+.tit-list{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  &::after{
+    margin: 37px auto 28px;
+    display: block;
+    content: '';
+    max-width: 650px;
+    height: 2px;
+    background-color: #BDBDBD;
+  }
+}
+
+.btn-list{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  button{
+    color: #828282;
+    font-weight: 500;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  button.on{
+    color:black;
+    font-weight: 900;
+  }
+}
+
+.wrap-movie-list{
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:23px;
+  padding: 24px 25px 28px;
+  margin-top: 28px;
+  background-color: #FFFFFF;
+  @include border-design(2px, 15px);
+}
+
+.item-moive{
+  width: 220px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  @include border-design(1px, 10px);
+  .wrap-item-top{
+    padding: 20px 19px 13px;
+    img{
+      width:180px;
+      height: 250px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+      @include border-design(1px, 5px);
+    }
+    .tit-movie-ellipsis{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 10px auto 12px;
+      text-align: start;
+      font-weight: 900;
+      line-height: 23px;
+    }
+    .txt-spec{
+      font-size: 13px;
+      dl{
+        display: flex;
+        margin-bottom: 5px;
+        line-height: 18px;
+      }
+      dt{
+        color: #828282;
+        margin-right:5px;
+      }
+      div{
+        display: flex;
+        justify-content: space-between;
+        dl:nth-child(2) dd{
+          &::before{
+            @include put-icon('../images/star.png');
+            width: 14px;
+            height: 14px;
+            margin-right: 4px;
+            margin-bottom: -1px;
+          }
+        }
+      }
+    }
+  }
+  .link-like{
+    display: flex;
+    background-color: #F2F2F2;
+    border-top:#BDBDBD solid 1px;
+    border-radius: 0 0 10px 10px;
+    button{
+      padding: 9px 0 12px;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    button:nth-child(1){
+      border-right:#BDBDBD solid 1px;
+    }
+    button:nth-child(2){
+      &::before{
+        @include put-icon('../images/아이콘_재생.png');
+        width: 16px;
+        height: 16px;
+        margin-bottom: -3px;
+      }
+    }
+  }
+}

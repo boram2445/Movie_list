@@ -1,0 +1,23 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+//mixin
+@mixin border-design($width, $radius){
+  border: $width solid #BDBDBD;
+  border-radius: $radius;
+}
+@mixin put-icon($image){
+  content: '';
+  display: inline-block;
+  background-image: url($image);
+  background-size: cover;
+}
+
+//layout
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height:100%;
+}
